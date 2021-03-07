@@ -6,3 +6,5 @@ input:focus::-webkit-input-placeholder {color:transparent;}
 input:focus:-moz-placeholder {color:transparent;}
 input:focus::-moz-placeholder {color:transparent;}
 input:focus:-ms-input-placeholder {color:transparent;}
+
+.venus{position:fixed;right: 5px;bottom: 10px;width:25px;height:25px;-webkit-transition: -webkit-transform .8s ease-in-out;transition: transform .8s ease-in-out}.venus:hover{-webkit-transform: rotate(360deg);transform: rotate(360deg)}
