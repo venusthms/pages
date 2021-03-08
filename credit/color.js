@@ -1,1 +1,1 @@
-$(document).ready(function(){$(".venus-icon").load("//dl.dropbox.com/s/38zv0iwb09dt8xy/venus.html");});
+$(document).ready(function(){$(".venus-icon").load("//venusthms.github.io/pages/credit/venus.html");});
