@@ -92,7 +92,6 @@ fill: var(--text);
 .c-wrapper {
 display: flex;
 min-height: 100vh;
-height: 100vh;
 top: 0;
 bottom: 0;
 right: 0;
