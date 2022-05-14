@@ -57,6 +57,7 @@ a {
 text-decoration: none;
 }
 
+
 /* transitions */
 a,
 a:hover,
@@ -88,6 +89,8 @@ transform: rotate(360deg);
 fill: #000;
 fill: var(--text);
 }
+
+.venus {filter: var(--credit)}
 
 .c-wrapper {
 display: flex;
