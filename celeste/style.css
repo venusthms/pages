@@ -79,7 +79,6 @@ width: 25px;
 height: 25px;
 -webkit-transition: -webkit-transform 0.8s ease-in-out;
 transition: transform 0.8s ease-in-out;
-fill: red;
 }
 .venus:hover {
 -webkit-transform: rotate(360deg);
