@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<head>
+ 
+<!-- ELARA by @venusthms / @leejordan
+
+-------------------------------------------------------------------------
+
+    - do no redistribute any part of this theme or remove the credit
+    - terms of use: venusthms.tumblr.com/terms
+    
+    - icons https://feathericons.com/
+    - filter tutorial: @magnusthemes
+    - more credits https://venusthms.tumblr.com/credits
+    - message me if you encounter any problems with this page
+            
+------------------------------------------------------------------------>
+
+<!----- tab title -----> 
+<title>Guess Who</title><link rel="shortcut icon" href="{Favicon}"> 
+ 
+<!----- scripts: no need to edit ----->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"><link href="//venusthms.github.io/pages/credit/venus.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script><script src="//venusthms.github.io/pages/credit/color.js"></script><script src="//venusthms.github.io/pages/feather.js"></script><script src="//venusthms.github.io/pages/elara/description.js"></script>
+
+<link href="http://static.tumblr.com/4gatuv1/X8Poxwvz8/style-my-tooltips.css" rel="stylesheet" type="text/css" /><script src="http://static.tumblr.com/4gatuv1/Aneoxwvz8/jquery.style-my-tooltips.js"></script><script>!function(t){t(document).ready(function(){t("a[title]").style_my_tooltips({tip_follows_cursor:!0,tip_delay_time:200,tip_fade_speed:300})})}(jQuery);</script>
+
+<script src="https://static.tumblr.com/xd6ujov/9Rpouml9f/imagesloaded.pkgd.min.js"></script><script src="https://static.tumblr.com/f6blkfc/3khouzw5b/masonry.pkgd.min.js"></script><script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script><script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+
+<script>
+    $(document).ready(function(){
+ var $container = $(".grid"); 
+ var filters = {}; 
+ var $grid = $container.isotope({
+   itemSelector: ".item",
+   masonry: {
+   fitWidth: true,
+   horizontalOrder: true,
+   percentPosition: false
+   }
+ });
+ 
+$('.item').click(function() {
+    $(this).toggleClass("clicked", 1000);
+    return false;
+    });
+
+});
+
+</script>
+
+
+<script>
+    $(document).ready(function() {
+$('.rndmDiv').hide()
+$('#showRndmdiv').click(function(){
+    var random = Math.floor(Math.random() * $('.rndmDiv').length);
+    $('.rndmDiv').hide().eq(random).show();
+});
+    });
+
+    window.onload = init;
+</script>
+ 
+<style type="text/css">
+
+/* change colors */
+:root {
+  --background: #fff;
+  --text: #222!important;
+  
+  --links: #222;
+  --links-hover: #b5c4d9;
+  
+  --filter-selected: #b5c4d9;
+  --filter-hover: #b5c4d9;
+  
+  --items: #f6f6f6;
+  --border: #f6f6f6;
+  
+  --icons: #444;
+  --description: #fff;
+}
+
+
+/* tumblr controls */
+iframe.tmblr-iframe {
+    z-index:99999999999999!important;
+    top:0!important;
+    right:0!important;
+    opacity:0.4;
+    /* delete invert(1) from here */
+        filter:invert(1) contrast(150%);
+        -webkit-filter:invert(1) contrast(150%);
+        -o-filter:invert(1) contrast(150%);
+        -moz-filter:invert(1) contrast(150%);
+        -ms-filter:invert(1) contrast(150%);
+    /* to here if your blog has a dark background */
+    transform:scale(0.65);
+    transform-origin:100% 0;
+    -webkit-transform:scale(0.65);
+    -webkit-transform-origin:100% 0;
+    -o-transform:scale(0.65);
+    -o-transform-origin:100% 0;
+    -moz-transform:scale(0.65);
+    -moz-transform-origin:100% 0;
+    -ms-transform:scale(0.65);
+    -ms-transform-origin:100% 0;}
+
+/* font */
+body {font-family: 'Scada';font-size: 11px;}
+
+/* cursor */
+.button, .long, a {cursor:pointer;}
+
+/* borders */
+.item {border:1px solid var(--border);cursor:pointer;}
+.stat1, .stat2, .stat3 {border-bottom:1px solid var(--border)}
+.item .url {border-top: 1px solid var(--border)}
+
+/* header*/
+.intro {text-align: left}
+
+.intro h1:after {content:"";height: 1px;width:15px;top: -3px}
+.intro a {margin-right:5px}
+
+.intro p {text-align:center;}
+
+.filters ul li:first-of-type {font-weight:bold}
+
+/*items*/
+.item {width: 150px;height: auto;border:1px solid #eee;} 
+.item img {width:100%;height:auto; padding:5px;}
+.top {height:125px}
+.name {width:100%;display:block;font-size:1.3em; border-top:1px solid #eee;padding: 10px 0;margin-top:-15px;letter-spacing:1px;text-transform:uppercase;}
+
+.desc, .item .url {text-align: left}
+.stat1, .stat2, .stat3 {padding: 0 5px 0 20px}
+.top span svg {width:12px;height:12px;margin-right:8px}
+
+.desc {background: var(--description);line-height:17px}
+.desc a {text-decoration:underline}
+
+.long {height: 70px;} /*length after which text gets cut off*/
+.long:after {content: '. . . ';} /*text after cut out*/
+
+.clicked {
+    filter: blur(2px) grayscale(50%);;
+}
+
+
+body{cursor: default;background: var(--background);color: var(--text)}iframe.tmblr-iframe:hover {opacity:0.6!important}header{width: 100%;min-height: 30vh;margin: auto;right: 0;left: 0;top: 0;position: absolute;text-align: center;padding-bottom:15px; display:flex;justify-content:center;align-items:flex-end;}.intro{padding: 10px;line-height:20px;width:auto;}.intro h1{display: inline;font-size: 1.1em;font-weight: 700;text-transform:uppercase;letter-spacing:1px;}.intro h1:after{position:relative;display:inline-block;background:var(--text);margin-left:5px;margin-right:5px}.desc p{margin:0;padding:15px}.filters ul{list-style:none;padding:0 0 0 5px;margin:0 0 5px 0}.filters ul li{display:inline}.filters ul li a:hover{color:var(--filter-hover)}.selected{color:var(--filter-selected)}.button{display: inline;margin-right: 15px}.button:hover{color:var(--links-hover)}.grid-container {width:80vw;margin:auto}.grid{width: 100%;position: relative;margin: auto;top: calc(35vh + 20px);margin-bottom:70px;}.item{margin: 10px;background: var(--items);text-align: center;box-sizing:border-box}.top span svg{color:var(--icons);flex-shrink:0}.top{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr);grid-column-gap:0;grid-row-gap:0}.top img{grid-area:1/1/4/2}.stat1{grid-area:1/2/2/3}.stat2{grid-area:2/2/3/3}.stat3{grid-area:3/2/4/3}.stat1, .stat2, .stat3{display:flex;justify-content:flex-start;align-items:center;text-align:left}.long{overflow:hidden;cursor: pointer}.long:after{display:block;position: absolute;bottom: 41px; width:100%; padding:0 15px;box-sizing:border-box;background:var(--description);height:20px;}.superlong:after{content:'';height:0;}.superlong {height:auto}.item .url{width: 100%;display: block;line-height: 40px;font-size: 1em}.url span{margin: auto;display: block; padding:0 15px;}a{color: var(--links);text-decoration: none}a:hover{color: var(--links-hover)}a, a:hover, .button, .button:hover, iframe.tmblr-iframe {transition-duration:.7s;-moz-transition-duration:.7s;-webkit-transition-duration:.7s;-o-transition-duration:.7s}nav{position: absolute}nav svg{width: 13px;color: var(--text);display:inline-block;margin-right:10px}@media only screen and (min-width: 1680px){header{min-height: 25vh}.grid{top: calc(25vh + 20px)}}::-moz-selection{background:var(--border);color:var(--text)}::selection{background:var(--border);color:var(--text)}#s-m-t-tooltip{max-width: 250px;padding:3px 5px;background: var(--background);font-family: 'Scada';letter-spacing: 1px;font-size:10px;color:var(--text);box-shadow: none}.venus path{fill:var(--text)}.filters ul li:first-of-type {margin-right:5px}
+
+.venus{position:fixed;right: 5px;bottom: 10px;width:25px;height:25px;-webkit-transition: -webkit-transform .8s ease-in-out;transition: transform .8s ease-in-out}.venus:hover{-webkit-transform: rotate(360deg);transform: rotate(360deg)}
+
+#picture   {
+    width:150px;
+    background:var(--items);
+    border:1px solid var(--border)
+}
+
+#showRndmdiv {
+        background:var(--items);
+    border:1px solid var(--border);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:3px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+
+<!----- header starts ----->
+<header><div class="intro">
+
+<!--title-->
+<h1>Guess Who?</h1>
+
+<!--links-->
+<span id="showRndmdiv">Get a character</span>
+<!--copy & paste as needed-->
+
+<!--description-->
+<p>
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/z3qPNcU.png"/>
+<span class="name">Anna</span>
+</div>
+<!-- item ends-->
+<!--copy & paste as needed-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/1MkVama.png"/>
+<span class="name">Cathy</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/oNZ7oER.png"/>
+<span class="name">Morgan</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/2BYoNeG.png"/>
+<span class="name">Alicia</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/ZZZLWjr.png"/>
+<span class="name">Tia</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/aQEwCSE.png"/>
+<span class="name">Tiffany</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/vcisoEg.png"/>
+<span class="name">Lisa</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/KAhWrcx.png"/>
+<span class="name">Nicole</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/D0L2n36.png"/>
+<span class="name">Alex</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/0AbMP1k.png"/>
+<span class="name">Naomi</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/ETc9WDT.png"/>
+<span class="name">Rose</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/vc6EWEX.png"/>
+<span class="name">Mary</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/1NqGSax.png"/>
+<span class="name">Sam</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/Fz1mLOa.png"/>
+<span class="name">Melissa</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/t0ErX1a.png"/>
+<span class="name">Lily</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/rC7MdXC.png"/>
+<span class="name">Harriet</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/qQaniwI.png"/>
+<span class="name">Emma</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/yXgC0X0.png"/>
+<span class="name">Julia</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/15sFuxN.png"/>
+<span class="name">Eve</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/CLSAVqo.png"/>
+<span class="name">Lauren</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/c1tEZly.png"/>
+<span class="name">Ellen</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/DCZ1BoD.png"/>
+<span class="name">Holly</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/JNLXQNY.png"/>
+<span class="name">Yvonne</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/fJPDTXt.png"/>
+<span class="name">Sharon</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/aVBZQnE.png"/>
+<span class="name">Lena</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/AY4NFtI.png"/>
+<span class="name">Sara</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/KSYcb8p.png"/>
+<span class="name">Mia</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/w1K828G.png"/>
+<span class="name">Paula</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/tbFAQQC.png"/>
+<span class="name">Kim</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/EEp1J3X.png"/>
+<span class="name">Jenny</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/cp2IzdM.png"/>
+<span class="name">Erin</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/dmj4lfI.png"/>
+<span class="name">Selena</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/GnEJpD5.png"/>
+<span class="name">Jen</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/ughIork.png"/>
+<span class="name">Susan</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/l2FWR02.png"/>
+<span class="name">Lara</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/YE2jXax.png"/>
+<span class="name">Rachel</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/hS8mY9O.png"/>
+<span class="name">Victoria</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item rndmDiv">
+<img src="https://i.imgur.com/2arIsia.png"/>
+<span class="name">Natalie</span>
+</div>
+<!-- item ends-->
+
+</p>
+
+</div></header>
+<!----- header ends ----->
+
+<!----- grid starts ----->
+<div class="grid-container"><div class="grid">
+
+<!--- how to edit the filters:
+
+- replace filter here with the filter names you set above (without .)
+- <li><a href="#" data-filter-value=".FILTERNAME">Filter 1</a></li>
+- make sure to not delete item (before the filters) though
+
+--->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/z3qPNcU.png"/>
+<span class="name">Anna</span>
+</div>
+<!-- item ends-->
+<!--copy & paste as needed-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/1MkVama.png"/>
+<span class="name">Cathy</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/oNZ7oER.png"/>
+<span class="name">Morgan</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/2BYoNeG.png"/>
+<span class="name">Alicia</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/ZZZLWjr.png"/>
+<span class="name">Tia</span>
+</div>
+<!-- item ends-->
+
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/aQEwCSE.png"/>
+<span class="name">Tiffany</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/vcisoEg.png"/>
+<span class="name">Lisa</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/KAhWrcx.png"/>
+<span class="name">Nicole</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/D0L2n36.png"/>
+<span class="name">Alex</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/0AbMP1k.png"/>
+<span class="name">Naomi</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/ETc9WDT.png"/>
+<span class="name">Rose</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/vc6EWEX.png"/>
+<span class="name">Mary</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/1NqGSax.png"/>
+<span class="name">Sam</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/Fz1mLOa.png"/>
+<span class="name">Melissa</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/t0ErX1a.png"/>
+<span class="name">Lily</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/rC7MdXC.png"/>
+<span class="name">Harriet</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/qQaniwI.png"/>
+<span class="name">Emma</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/yXgC0X0.png"/>
+<span class="name">Julia</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/15sFuxN.png"/>
+<span class="name">Eve</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/CLSAVqo.png"/>
+<span class="name">Lauren</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/c1tEZly.png"/>
+<span class="name">Ellen</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/DCZ1BoD.png"/>
+<span class="name">Holly</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/JNLXQNY.png"/>
+<span class="name">Yvonne</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/fJPDTXt.png"/>
+<span class="name">Sharon</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/aVBZQnE.png"/>
+<span class="name">Lena</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/AY4NFtI.png"/>
+<span class="name">Sara</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/KSYcb8p.png"/>
+<span class="name">Mia</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/w1K828G.png"/>
+<span class="name">Paula</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/tbFAQQC.png"/>
+<span class="name">Kim</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/EEp1J3X.png"/>
+<span class="name">Jenny</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/cp2IzdM.png"/>
+<span class="name">Erin</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/dmj4lfI.png"/>
+<span class="name">Selena</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/GnEJpD5.png"/>
+<span class="name">Jen</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/ughIork.png"/>
+<span class="name">Susan</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/l2FWR02.png"/>
+<span class="name">Lara</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/YE2jXax.png"/>
+<span class="name">Rachel</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/hS8mY9O.png"/>
+<span class="name">Victoria</span>
+</div>
+<!-- item ends-->
+
+<!--item starts-->
+<div class="item">
+<img src="https://i.imgur.com/2arIsia.png"/>
+<span class="name">Natalie</span>
+</div>
+<!-- item ends-->
+    
+</div>
+<!----- grid ends ----->
+
+<!----- credit: do not edit or remove ----->
+<a href="https://venusthms.tumblr.com/" title="venusthms">
+<div class="venus-icon"></div>
+</a>
+<script>feather.replace()</script>
+</body>
+</html>
