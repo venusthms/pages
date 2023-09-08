@@ -28,40 +28,6 @@
 
 <script src="https://static.tumblr.com/xd6ujov/9Rpouml9f/imagesloaded.pkgd.min.js"></script><script src="https://static.tumblr.com/f6blkfc/3khouzw5b/masonry.pkgd.min.js"></script><script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script><script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
 <script src="//venusthms.github.io/pages/guess/stuff.js"></script>
-<script>
-    $(document).ready(function(){
- var $container = $(".grid"); 
- var filters = {}; 
- var $grid = $container.isotope({
-   itemSelector: ".item",
-   masonry: {
-   fitWidth: true,
-   horizontalOrder: true,
-   percentPosition: false
-   }
- });
- 
-$('.item').click(function() {
-    $(this).toggleClass("clicked", 1000);
-    return false;
-    });
-
-});
-
-</script>
-
-
-<script>
-    $(document).ready(function() {
-$('.rndmDiv').hide()
-$('#showRndmdiv').click(function(){
-    var random = Math.floor(Math.random() * $('.rndmDiv').length);
-    $('.rndmDiv').hide().eq(random).show();
-});
-    });
-
-    window.onload = init;
-</script>
  
 <style type="text/css">
 
